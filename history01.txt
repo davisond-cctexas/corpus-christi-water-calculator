@@ -1,0 +1,132 @@
+apt update
+ls
+water-calculator/
+mv /var/www/html/test/ /var/www/html/special-event
+mc
+man mc
+man folder
+man
+man rename
+../
+npm install mysql
+clear
+nano history.txt 
+history >> history.txt
+history
+history --save
+history --save -h
+history -h
+history 
+ip addr
+env DEBUG='*' CC_PORT=8080 yarn start #
+DEBUG='*' CC_PORT=8080 yarn start #
+env  CC_PORT=8080 yarn start
+CC_PORT=8080 yarn start
+yarn run build
+yarn install
+yarn
+nano package.json 
+nano scripts/build 
+la
+scripts/
+sudo chmod -R 777 scripts/
+sudo chmod -R 777 build 
+yarn instal
+npm install webpack
+nano build 
+sh build
+clar
+sh build 
+yarn build
+build
+test/
+nano yarn-error.log 
+/var/www/html/test/
+npm -v
+sudo n stable
+sudo npm install -g n
+sudo npm cache clean -f
+node
+;s
+nodejs -v
+sudo apt-get install npm
+node -v
+sudo apt-get install nodejs
+sudo apt-get autoremove
+sudo apt-get purge nodejs
+sudo apt-get purge --auto-remove nodejs
+apt
+apt list
+node -h
+node help
+fish exit
+exit fish
+exit
+esxit
+ezirt
+start
+nano start 
+env DEBUG='*' CC_PORT=8080 yarn start
+npm update
+npm install -g yarn forever
+npm install yarn
+DEBUG='*' CC_PORT=8080 yarn start
+nano watch 
+nano index.js 
+touch index.js
+cd scripts/
+apt install mcedit
+npm info
+node info
+npm
+npm install
+apt install nodejs-legacy
+/var/www/html/
+cd /
+exitg
+npm -h
+npm init
+cd test/
+mkdir test
+apt install npm
+compass -v
+composs -v
+gem install compass
+sass --watch .
+nano style.css
+sass --watch style.scss:style.css
+apt install sass
+sudo apt-get install ruby-full rubygems
+ruby -v
+ruby
+sass -v
+apt install ruby-sass
+sass
+apt install xcode-select
+nano /var/lib/gems/2.3.0/extensions/x86_64-linux/2.3.0/ffi-1.9.23/gem_make.out
+gem install sass
+xcode-select --install
+Latest version already installed. Done.
+-1.8.2/gem_make.out
+gem update --system
+nano /var/lib/gems/2.3.0/extensions/x86_64-linux/2.3.0/nokogiri-1.8.2/mkmf.log
+gem install nokogiri -- --use-system-libraries
+Results logged to /var/lib/gems/2.3.0/extensions/x86_64-linux/2.3.0/ffi-1.9.23/gem_make.out
+Gem files will remain installed in /var/lib/gems/2.3.0/gems/ffi-1.9.23 for inspection.
+sudo gem install sass
+sudo gem install sass --no-user-install
+history 5
+history  5
+apt install yum
+sudo yum install gcc gcc-c++
+gem install json_pure
+gem install sass --no-user-install
+nano  /var/lib/gems/2.3.0/extensions/x86_64-linux/2.3.0/ffi-1.9.23/mkmf.log
+install sass --no-user-install
+gem 
+apt upgrade 
+sudo
+apt install ruby-full
+nano apache2.conf 
+/etc/apache2/
+hostname
