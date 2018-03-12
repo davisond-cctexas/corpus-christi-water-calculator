@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="1eb0a1c0-96e6-47a1-bacb-d5cad892f0e4" name="corpus-christi-water-calculator" url="http://172.24.149.183">
+        <fileTransfer host="172.24.149.183" port="22" rootFolder="/home/davisond" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
