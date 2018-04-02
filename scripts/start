@@ -1,5 +1,0 @@
-#!/bin/bash
-
-printf "Starting node server:\n\n"
-
-node  index.js
