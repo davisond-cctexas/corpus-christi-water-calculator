@@ -1,0 +1,641 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>Theming - Semantic</title>
+
+    <!--- Site CSS -->
+    <link rel="stylesheet" type="text/css" href="Semantic-UI-CSS-master/components/reset.css">
+    <link rel="stylesheet" type="text/css" href="Semantic-UI-CSS-master/components/site.css">
+    <link rel="stylesheet" type="text/css" href="Semantic-UI-CSS-master/components/grid.css">
+
+    <!--- Component CSS -->
+    <link rel="stylesheet" type="text/css" href="Semantic-UI-CSS-master/components/icon.css">
+    <link rel="stylesheet" type="text/css" href="Semantic-UI-CSS-master/components/input.css">
+    <link rel="stylesheet" type="text/css" href="Semantic-UI-CSS-master/components/button.css">
+    <link rel="stylesheet" type="text/css" href="Semantic-UI-CSS-master/components/divider.css">
+    <link rel="stylesheet" type="text/css" href="Semantic-UI-CSS-master/components/label.css">
+    <link rel="stylesheet" type="text/css" href="Semantic-UI-CSS-master/components/dropdown.css">
+    <link rel="stylesheet" type="text/css" href="Semantic-UI-CSS-master/components/transition.css">
+    <link rel="stylesheet" type="text/css" href="Semantic-UI-CSS-master/components/popup.css">
+
+    <!--- Component JS -->
+    <script src="jquery.min.js"></script>
+    <script src="iframe-content.js"></script>
+    <script type="text/javascript" src="Semantic-UI-CSS-master/components/popup.js"></script>
+    <script type="text/javascript" src="Semantic-UI-CSS-master/components/dropdown.js"></script>
+    <script type="text/javascript" src="Semantic-UI-CSS-master/components/transition.js"></script>
+
+    <!--- Show Names -->
+    <script src="show-examples.js"></script>
+
+    <!--- Example CSS -->
+    <style>
+        body {
+            padding: 1em;
+        }
+        .ui.input + .ui.input {
+            margin-left: 1em;
+        }
+    </style>
+
+    <!--- Example Javascript -->
+    <script>
+        $(document)
+            .ready(function() {
+                $('.ui.dropdown')
+                    .dropdown({
+                        on: 'click'
+                    })
+                ;
+            })
+        ;
+    </script>
+</head>
+
+<body>
+
+
+<div class="ui two column stackable grid">
+    <div class="column">
+
+        <div class="ui action left icon input">
+            <i class="search icon"></i>
+            <input type="text" placeholder="Search...">
+            <div class="ui teal button">Search</div>
+        </div>
+
+        <div class="ui divider"></div>
+        <div class="ui input error">
+            <input placeholder="Search..." type="text">
+        </div>
+        <div class="ui divider"></div>
+
+        <div class="ui right labeled input">
+            <input placeholder="Placeholder" type="text">
+            <div class="ui dropdown label">
+                <div class="text">Meter Size</div>
+                <i class="dropdown icon"></i>
+                <div class="menu">
+                    <div class="item">Choice 1</div>
+                    <div class="item">Choice 2</div>
+                    <div class="item">Choice 3</div>
+                </div>
+            </div>
+        </div>
+        <div class="ui divider"></div>
+
+        <div class="ui transparent icon input">
+            <input placeholder="Search..." type="text">
+            <i class="search icon"></i>
+        </div>
+        <div class="ui transparent left icon input">
+            <input placeholder="Search..." type="text">
+            <i class="search icon"></i>
+        </div>
+        <div class="ui divider"></div>
+        <div class="ui left icon input loading">
+            <input placeholder="Loading..." type="text">
+            <i class="search icon"></i>
+        </div>
+
+        <div class="ui icon input loading">
+            <input placeholder="Loading..." type="text">
+            <i class="search icon"></i>
+        </div>
+
+    </div>
+    <div class="column">
+        <div class="ui right labeled left icon input">
+            <i class="tags icon"></i>
+            <input placeholder="Enter tags" type="text">
+            <a class="ui tag label">
+                Add Tag
+            </a>
+        </div>
+        <div class="ui divider"></div>
+        <div class="ui labeled input">
+            <a class="ui label">
+                Label
+            </a>
+            <input type="text" placeholder="Placeholder...">
+        </div>
+        <div class="ui divider"></div>
+        <div class="ui right labeled input">
+            <input type="text" placeholder="Placeholder...">
+            <a class="ui label">
+                Label
+            </a>
+        </div>
+        <div class="ui divider"></div>
+        <div class="ui labeled icon input">
+            <div class="ui label">
+                http://
+            </div>
+            <input type="text" placeholder="domain.com">
+            <i class="add circle link icon"></i>
+        </div>
+        <div class="ui right action input">
+            <input type="text" placeholder="domain.com">
+            <div class="ui teal button">
+                <i class="add icon"></i>
+                Add
+            </div>
+        </div>
+        <div class="ui divider"></div>
+        <div class="ui corner labeled input">
+            <input type="text" placeholder="Required Field">
+            <div class="ui corner label">
+                <i class="asterisk icon"></i>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
+<script src="numeral.min.js"></script>
+<script>
+
+    var tier1, tier2, tier3, tier4, meter_rate;
+
+    function calcTier1(Water_Usage1) {
+
+        if (Water_Usage1 < 4001) {
+            tier1 = Water_Usage1;
+        } else {
+            tier1 = 4000;
+        }
+
+        return tier1;
+    };
+
+    function calcTier2(Water_Usage2) {
+
+        if (Water_Usage2 < 4001) {
+            tier2 = 0;
+        } else if ((Water_Usage2 - 4000) < 6001) {
+            tier2 = Water_Usage2 - 4000
+        } else {
+            tier2 = 6000;
+        }
+
+        return tier2;
+    };
+
+
+    function calcTier3(Water_Usage3) {
+
+        if (Water_Usage3 < 10000) {
+            tier3 = 0;
+        } else if ((Water_Usage3 - 10000) > 5000) {
+            tier3 = 5000;
+        } else {
+            tier3 = (Water_Usage3 - (tier1 + tier2));
+        }
+
+        return tier3;
+    };
+
+
+    function calcTier4(Water_Usage4) {
+
+        if (Water_Usage4 < 15000) {
+            tier4 = 0;
+        } else {
+
+            tier4 = (Water_Usage4 - (tier1 + tier2 + tier3));
+        }
+
+        return tier4;
+    };
+
+
+    function calcMeterSizeRate(Meter_Size) {
+
+        if (Meter_Size == 1) {
+            meter_rate = 5.33;
+        } else if (Meter_Size == 2) {
+            meter_rate = 7.40;
+        } else if (Meter_Size == 3) {
+            meter_rate = 10.78;
+        } else if (Meter_Size == 4) {
+            meter_rate = 20.00;
+        } else if (Meter_Size == 5) {
+            meter_rate = 32.54;
+        } else if (Meter_Size == 6) {
+            meter_rate = 77.00;
+        } else if (Meter_Size == 7) {
+            meter_rate = 126.62;
+        } else {
+            meter_rate = 0.00;
+        }
+
+        return meter_rate;
+    };
+
+
+
+    //Change image when gallon slider moves
+    function changeSpotColor() {
+        var image = document.getElementById('myImage');
+        if (image.src.match("bulbon")) {
+            image.src = "../images/water-calculator-sprite.png";
+        } else {
+            image.src = "../images/water-calculator-sprite.png";
+        }
+    };
+
+
+
+    //Prevent user from typing letters into textbox
+    function isNumber(evt) {
+        evt = (evt) ? evt : window.event;
+        var charCode = (evt.which) ? evt.which : evt.keyCode;
+        if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+            return false;
+        } else {
+
+            return true;
+        }
+
+    }
+
+
+    function myFunction() {
+
+        //Grab the number of gallons.
+        var w = parseInt(document.getElementById("gallon_calc_input").value);
+
+        //Grab the meter size.
+        var metersize_calc_input = document.getElementById("metersize_calc_input");
+        var x = metersize_calc_input.options[metersize_calc_input.selectedIndex].value;
+
+        if (isNaN(w)) {
+            w = 0;
+            //document.getElementById("gallon_calc_input").value = 0;
+        }
+
+        w *= 100; //Calculate usage charge
+
+        var amount1 = calcTier1(w); //Pass water usage to determine tier1 amount
+        var amount2 = calcTier2(w); //Pass water usage to determine tier2 amount
+        var amount3 = calcTier3(w); //Pass water usage to determine tier3 amount
+        var amount4 = calcTier4(w); //Pass water usage to determine tier4 amount
+
+
+
+        //Pass tier usage amounts to text box
+        document.getElementById('tier1').innerHTML = numeral(amount1).format('0,0');
+        document.getElementById('tier2').innerHTML = numeral(amount2).format('0,0');
+        document.getElementById('tier3').innerHTML = numeral(amount3).format('0,0');
+        document.getElementById('tier4').innerHTML = numeral(amount4).format('0,0');
+
+
+        //Calculate Usage (In Gallons) Sum
+        var usage_sum = (amount1 + amount2 + amount3 + amount4);
+        document.getElementById('usage_sum').innerHTML = numeral(usage_sum).format('0,0');
+
+
+        //Calculate the Usage Charge for each tier
+        var usage_charge1 = ((amount1 * 1.90) / 1000);
+        var usage_charge2 = ((amount2 * 4.25) / 1000);
+        var usage_charge3 = ((amount3 * 6.03) / 1000);
+        var usage_charge4 = ((amount4 * 8.55) / 1000);
+
+
+        //Pass the Usage Charge for each tier to the textbox
+
+        document.getElementById('tier1_uc').innerHTML = numeral(usage_charge1.toFixed(2)).format('$0,0.00');
+        document.getElementById('tier2_uc').innerHTML = numeral(usage_charge2.toFixed(2)).format('$0,0.00');
+        document.getElementById('tier3_uc').innerHTML = numeral(usage_charge3.toFixed(2)).format('$0,0.00');
+        document.getElementById('tier4_uc').innerHTML = numeral(usage_charge4.toFixed(2)).format('$0,0.00');
+
+
+        //Calculate Usage Charge total sum
+        var total_usage_charges = (usage_charge1 + usage_charge2 + usage_charge3 + usage_charge4).toFixed(2);
+
+
+        //Determine the base charge based on the meter size that is selected
+        var total_base_charges = calcMeterSizeRate(metersize_calc_input.selectedIndex);
+
+
+        //Pass the total usage charge to the textbox
+        document.getElementById('usage_charge_sum').innerHTML = numeral(total_usage_charges).format('$0,0.00');
+        document.getElementById('total_usage_charge').innerHTML = numeral(total_usage_charges).format('$0,0.00');
+
+
+        //Pass the total base charge to the textbox
+        document.getElementById('total_base_charge').innerHTML = numeral(total_base_charges).format('$0,0.00');
+
+
+        //Calculate the total estimated water charges
+        var total = (parseFloat(total_usage_charges) + parseFloat(total_base_charges));
+
+
+        //Pass the total estimated water charges to the textbox
+        document.getElementById('total_water_charges').innerHTML = numeral(total).format('$0,0.00');
+
+
+        var div = document.getElementById("estimated_total");
+        div.textContent = numeral(total).format('$0,0.00');
+
+    };
+
+
+</script>
+
+<style>
+
+    body{
+        font-family: Arial;
+    }
+
+    #calulator_container{
+        width:700px;
+    }
+
+    #calc_inputs{
+        float:left;
+        width: 37%;
+        margin-right: 2%;
+        margin-bottom:20px;
+    }
+
+    #calc_inputs label{
+        margin-bottom:10px;
+        font-size:20px;
+    }
+
+    .calc_input_section{
+        margin-bottom:20px;
+        float: left;
+    }
+
+    .calc_input{
+        width:100%;
+        font-size:16px;
+        border:none;
+        border-bottom: solid 1px rgb(0,64,128);
+        padding: 10px 0;
+        border-radius:0px;
+    }
+
+    #calc_results{
+        float:right;
+        width:53%;
+        background-color: white;
+        color: rgb(0,64,128);
+        text-align: center;
+        border-radius: 6px;
+        padding: 30px 0px;
+    }
+
+    #calc_details{
+        clear:both;
+        margin-top:20px;
+        display:block;
+    }
+
+    /*
+      #calc_details table{
+       width: 100%;
+      }
+      */
+
+    #estimated_total{
+        font-size: 45px;
+        color:#60b609;
+        padding-bottom: 10px;
+    }
+
+    #gallon_input{
+
+    }
+
+
+
+</style>
+<h1>Corpus Christi Water Calculcator TEST</h1>
+<div id="calulator_container">
+
+    <div id="calc_inputs">
+
+
+
+        <div class="calc_input_section">
+
+            <!--Left Side-->
+            <div class="event-date">
+
+                <div class="icons">
+                    <span class="water-sprite water-calculator-icons faucet" deluminate_imagetype="png"></span>
+                </div>
+
+
+            </div>
+            <!--Right Side-->
+            <div class="event-desc">
+                <a class="iwanttomodal" href="#gallons">
+                    <label>Gallons <span style="font-size:11px">(in hundreds)</span></label>
+                    <span class="water-sprite water-calculator-icon-info info" deluminate_imagetype="png"></span>
+                </a>
+                <input type="number" placeholder="0" max="9999999" min="0" class="calc_input" id="gallon_calc_input" onkeyup="myFunction()" onkeypress="return isNumber(event)" style="display: inline-block;">
+            </div>
+
+        </div>
+
+        <div class="calc_input_section">
+            <!--Left Side-->
+            <div class="event-date">
+                <div class="icons">
+                    <span class="water-sprite water-calculator-icons meter" deluminate_imagetype="png"></span>
+                </div>
+            </div>
+            <!--Right Side-->
+
+            <div class="event-desc">
+                <a class="iwanttomodal" href="#metersize">
+                    <label>Meter Size</label>
+                    <span class="water-sprite water-calculator-icon-info info" deluminate_imagetype="png"></span>
+                </a>
+                <select id="metersize_calc_input" class="calc_input" onchange="myFunction();">
+                    <option value="">Select Meter Size</option>
+                    <option>5/8</option>
+                    <option>3/4</option>
+                    <option>1</option>
+                    <option>1 1/2</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                </select>
+            </div>
+
+        </div>
+
+
+        <!--Fancybox for showing how to find the water usage-->
+        <div id="gallons" style="display:none; bacgkground-color:grey;">
+            <h3>Gallons</h3>
+            <p>Enter your water usage in 100 gallons which can be found on your utility invoice.</p>
+            <p align="center"><img src="../SiteAssets/img/DWU-Invoice-Gallons.jpg" alt="Help me find my water usage"></p>
+
+        </div>
+
+        <!--Fancybox for showing help me find my meter size-->
+        <div id="metersize" style="display:none; bacgkground-color:grey;">
+            <h3>Meter Size</h3>
+            <p>Select your meter size which can be found on your utility invoice. Your Base Charge is determined by the meter size.</p>
+            <p align="center"><img src="../SiteAssets/img/DWU-Invoice.jpg" alt="Help me find my meter size"></p>
+        </div>
+
+        <!--Fancybox for showing information about the usage charge -->
+        <div id="usagecharge" style="display:none; bacgkground-color:grey;">
+            <h3>Usage Charge</h3>
+            <p>This volume charge is based on usage and covers variable cost such as chemicals, electric power, facility maintenance, repair of mains and repayment of bonds sold to finance construction of the water system.</p>
+        </div>
+
+
+        <!--Fancybox for showing information about the base charge -->
+        <div id="basecharge" style="display:none; bacgkground-color:grey;">
+            <h3>Base Charge</h3>
+            <p>Base water charges cover fixed cost such as reading and maintaining the meter, account maintenance, mailing bills and processing payments.</p>
+        </div>
+
+    </div>
+
+
+
+    <div id="calc_results">
+        <div id="estimated_total">$0.00</div>
+        <div style="font-weight: bold;">MONTHLY CHARGES ESTIMATE</div>
+        <br>
+        <div id="">*Estimation Details Below</div>
+    </div>
+
+    <div class="slh-calculator" id="calc_details">
+
+        <h3>Estimation Details</h3>
+
+        <table>
+            <tbody>
+            <tr>
+                <th>&nbsp;</th>
+                <th>Usage (In Gallons)</th>
+                <th>Usage Charge</th>
+            </tr>
+            <tr>
+                <td style="text-align:left">Tier 1 (0-4000):</td>
+                <td><span id="tier1" name="tier1">4,000</span></td>
+                <td><span id="tier1_uc" name="tier1_uc">$0.00</span></td>
+            </tr>
+            <tr>
+                <td style="text-align:left">Tier 2 (4001-10000):</td>
+                <td><span id="tier2" name="tier2">6,000</span></td>
+                <td><span id="tier2_uc" name="tier2_uc">$0.00</span></td>
+            </tr>
+            <tr>
+                <td style="text-align:left">Tier 3 (10001-15000):</td>
+                <td><span id="tier3" name="tier3">3,000</span></td>
+                <td><span id="tier3_uc" name="tier3_uc">$0.00</span></td>
+            </tr>
+            <tr>
+                <td style="text-align:left">Tier 4 (&gt;15000):</td>
+                <td><span id="tier4" name="tier4">0</span></td>
+                <td><span id="tier4_uc" name="tier4_uc">$0.00</span></td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td><span id="usage_sum" name="usage_sum">13,000</span></td>
+                <td><span id="usage_charge_sum" name="usage_charge_sum">$0.00</span></td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+            <!--Water Charges-->
+            <tr>
+                <td style="text-align:left"><a class="iwanttomodal" href="#usagecharge">Usage Charge<span class="water-sprite water-calculator-icon-info info" deluminate_imagetype="png"></span></a></td>
+                <td>&nbsp;</td>
+                <td><span id="total_usage_charge" name="total_usage_charge">$0.00</span></td>
+            </tr>
+            <tr>
+                <td style="text-align:left"><a class="iwanttomodal" href="#basecharge">Base Charge<span class="water-sprite water-calculator-icon-info info" deluminate_imagetype="png"></span></a></td>
+                <td>&nbsp;</td>
+                <td><span id="total_base_charge" name="total_base_charge">$0.00</span></td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td style="text-align:left"><strong>Total Estimated Water Charges</strong></td>
+                <td>&nbsp;</td>
+                <td><span id="total_water_charges" name="total_water_charges">$0.00</span></td>
+            </tr>
+
+            </tbody><tbody>
+            </tbody></table>
+
+
+
+
+
+    </div>
+
+
+    <script>
+        $(document).ready(function () {
+
+            $(".iwanttomodal").fancybox({
+                'titlePosition'   : 'inside',
+                'transitionIn'    : 'none',
+                'transitionOut'   : 'none'
+            });
+
+            $(".swagit").fancybox({
+                'titlePosition'   : 'inside',
+                'transitionIn'    : 'none',
+                'transitionOut'   : 'none',
+                'type'      : 'iframe',
+                'width'     : 570,
+                'height'    : 480,
+                'scrolling'       : 'no'
+            });
+
+        });
+
+    </script>
+
+
+    <style>
+        #deptBanner img{
+            width: 1024px;
+            height: 240px;
+        }
+    </style>
+</div>
+
+<?php
+/**
+ * Created by PhpStorm.
+ * User: DavisonD
+ * Date: 4/11/2018
+ * Time: 2:24 PM
+ */
+
+
+echo phpinfo();
