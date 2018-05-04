@@ -12,7 +12,7 @@
   <link rel="stylesheet" type="text/css" href="Semantic-UI-CSS-master/components/site.css">
 
   <link rel="stylesheet" type="text/css" href="Semantic-UI-CSS-master/components/container.css">
-  <link rel="stylesheet" type="text/css" href="Semantic-UI-CSS-master/components/grid.css">
+  <link rel="stylesheet" type="text/css" hrefdrus="Semantic-UI-CSS-master/components/grid.css">
   <link rel="stylesheet" type="text/css" href="Semantic-UI-CSS-master/components/header.css">
   <link rel="stylesheet" type="text/css" href="Semantic-UI-CSS-master/components/image.css">
   <link rel="stylesheet" type="text/css" href="Semantic-UI-CSS-master/components/menu.css">
@@ -199,7 +199,7 @@
 
     <div class="ui text container">
       <h1 class="ui inverted header">
-        Imagine-a-Company
+        Corpus Christi 
       </h1>
       <h2>Do whatever you want when you want to.</h2>
       <div class="ui huge primary button">Get Started <i class="right arrow icon"></i></div>

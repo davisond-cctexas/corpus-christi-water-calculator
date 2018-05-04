@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,7 +5,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-    <title>Theming - Semantic</title>
+    <title>Debug</title>
 
     <!--- Site CSS -->
     <link rel="stylesheet" type="text/css" href="Semantic-UI-CSS-master/components/reset.css">
@@ -38,6 +37,10 @@
         body {
             padding: 1em;
         }
+
+        div {
+            /*border: 1px solid #000;*/
+        }
         .ui.input + .ui.input {
             margin-left: 1em;
         }
@@ -59,103 +62,226 @@
 
 <body>
 
-
-<div class="ui two column stackable grid">
+<h1>    Corpus Christi Water Calculator</h1>
+<div class="ui one column stackable grid">
     <div class="column">
 
-        <div class="ui action left icon input">
-            <i class="search icon"></i>
-            <input type="text" placeholder="Search...">
-            <div class="ui teal button">Search</div>
+<div id="calulator_container">
+
+    <div id="calc_inputs">
+
+
+
+        <div class="calc_input_section">
+
+            <!--Left Side-->
+            <div class="event-date">
+
+                <div class="icons">
+                    <span class="water-sprite water-calculator-icons faucet" deluminate_imagetype="png"></span>
+                </div>
+
+
+            </div>
+            <!--Right Side-->
+            <div class="event-desc">
+                <a class="iwanttomodal" href="#gallons">
+                    <label>Gallons <span style="font-size:11px">(in hundreds)</span></label>
+                    <span class="water-sprite water-calculator-icon-info info" deluminate_imagetype="png"></span>
+                </a>
+                <input  type="number" placeholder="0" max="9999999" min="0" class="calc_input" name="gallon_input" id="gallon_input" onkeyup="myFunction()" onkeypress="return isNumber(event)" style="display: inline-block;">
+            </div>
+
         </div>
 
-        <div class="ui divider"></div>
-        <div class="ui input error">
-            <input placeholder="Search..." type="text">
-        </div>
-        <div class="ui divider"></div>
-
-        <div class="ui right labeled input">
-            <input placeholder="Placeholder" type="text">
-            <div class="ui dropdown label">
-                <div class="text">Meter Size</div>
-                <i class="dropdown icon"></i>
-                <div class="menu">
-                    <div class="item">Choice 1</div>
-                    <div class="item">Choice 2</div>
-                    <div class="item">Choice 3</div>
+        <div class="calc_input_section">
+            <!--Left Side-->
+            <div class="event-date">
+                <div class="icons">
+                    <span class="water-sprite water-calculator-icons meter" deluminate_imagetype="png"></span>
                 </div>
             </div>
-        </div>
-        <div class="ui divider"></div>
+            <!--Right Side-->
 
-        <div class="ui transparent icon input">
-            <input placeholder="Search..." type="text">
-            <i class="search icon"></i>
-        </div>
-        <div class="ui transparent left icon input">
-            <input placeholder="Search..." type="text">
-            <i class="search icon"></i>
-        </div>
-        <div class="ui divider"></div>
-        <div class="ui left icon input loading">
-            <input placeholder="Loading..." type="text">
-            <i class="search icon"></i>
+            <div class="event-desc">
+                <a class="iwanttomodal" href="#metersize">
+                    <label>Meter Size</label>
+                    <span class="water-sprite water-calculator-icon-info info" deluminate_imagetype="png"></span>
+                </a>
+                <select id="metersize_dropdown" class="calc_input" onchange="myFunction();">
+                    <option value="Select Meter Size">Select Meter Size</option>
+                    <option value="5/8 & 3/4">5/8 & 3/4</option>
+                    <option value="1">1</option>
+
+                </select>
+            </div>
+
         </div>
 
-        <div class="ui icon input loading">
-            <input placeholder="Loading..." type="text">
-            <i class="search icon"></i>
+
+
+
+
+
+
+        <!--Fancybox for showing how to find the water usage-->
+        <div id="gallons" style="display:none; bacgkground-color:grey;">
+            <h3>Gallons</h3>
+            <p>Enter your water usage in 100 gallons which can be found on your utility invoice.</p>
+            <p align="center"><img src="../SiteAssets/img/DWU-Invoice-Gallons.jpg" alt="Help me find my water usage"></p>
+
+        </div>
+
+        <!--Fancybox for showing help me find my meter size-->
+        <div id="metersize" style="display:none; bacgkground-color:grey;">
+            <h3>Meter Size</h3>
+            <p>Select your meter size which can be found on your utility invoice. Your Base Charge is determined by the meter size.</p>
+            <p align="center"><img src="../SiteAssets/img/DWU-Invoice.jpg" alt="Help me find my meter size"></p>
+        </div>
+
+        <!--Fancybox for showing information about the usage charge -->
+        <div id="usagecharge" style="display:none; bacgkground-color:grey;">
+            <h3>Usage Charge</h3>
+            <p>This volume charge is based on usage and covers variable cost such as chemicals, electric power, facility maintenance, repair of mains and repayment of bonds sold to finance construction of the water system.</p>
+        </div>
+
+
+        <!--Fancybox for showing information about the base charge -->
+        <div id="basecharge" style="display:none; bacgkground-color:grey;">
+            <h3>Base Charge</h3>
+            <p>Base water charges cover fixed cost such as reading and maintaining the meter, account maintenance, mailing bills and processing payments.</p>
         </div>
 
     </div>
-    <div class="column">
-        <div class="ui right labeled left icon input">
-            <i class="tags icon"></i>
-            <input placeholder="Enter tags" type="text">
-            <a class="ui tag label">
-                Add Tag
-            </a>
-        </div>
-        <div class="ui divider"></div>
-        <div class="ui labeled input">
-            <a class="ui label">
-                Label
-            </a>
-            <input type="text" placeholder="Placeholder...">
-        </div>
-        <div class="ui divider"></div>
-        <div class="ui right labeled input">
-            <input type="text" placeholder="Placeholder...">
-            <a class="ui label">
-                Label
-            </a>
-        </div>
-        <div class="ui divider"></div>
-        <div class="ui labeled icon input">
-            <div class="ui label">
-                http://
-            </div>
-            <input type="text" placeholder="domain.com">
-            <i class="add circle link icon"></i>
-        </div>
-        <div class="ui right action input">
-            <input type="text" placeholder="domain.com">
-            <div class="ui teal button">
-                <i class="add icon"></i>
-                Add
-            </div>
-        </div>
-        <div class="ui divider"></div>
-        <div class="ui corner labeled input">
-            <input type="text" placeholder="Required Field">
-            <div class="ui corner label">
-                <i class="asterisk icon"></i>
-            </div>
-        </div>
+
+
+
+    <div id="calc_results">
+        <div id="estimated_total">$0.00</div>
+        <div style="font-weight: bold;">MONTHLY CHARGES ESTIMATE</div>
+        <br>
+        <div id="">*Estimation Details Below</div>
+    </div>
+
+
+
+
+
 
     </div>
+
+
+
+
+
 </div>
+
+<!-- ============================================================================================================================================================ -->
+<div class="column">
+    <h2>     WASTE WATER - RESIDENTIAL      </h2>
+
+<div id="calulator_container">
+
+    <div id="calc_inputs">
+
+
+
+        <div class="calc_input_section">
+
+            <!--Left Side-->
+            <div class="event-date">
+
+                <div class="icons">
+                    <span class="water-sprite water-calculator-icons faucet" deluminate_imagetype="png"></span>
+                </div>
+
+
+            </div>
+            <!--Right Side-->
+            <div class="event-desc">
+                <a class="iwanttomodal" href="#gallons">
+                    <label>Gallons <span style="font-size:11px">(in hundreds)</span></label>
+                    <span class="water-sprite water-calculator-icon-info info" deluminate_imagetype="png"></span>
+                </a>
+                <input  type="number" placeholder="0" max="9999999" min="0" class="calc_input" name="waste_water_gallon_input" id="waste_water_gallon_input" onkeyup="myFunction_waste_water_gallon_input()" onkeypress="return isNumber(event)" style="display: inline-block;">
+            </div>
+
+        </div>
+
+
+
+
+
+
+
+        <!--Fancybox for showing how to find the water usage-->
+        <div id="gallons" style="display:none; bacgkground-color:grey;">
+            <h3>Gallons</h3>
+            <p>Enter your water usage in 100 gallons which can be found on your utility invoice.</p>
+            <p align="center"><img src="../SiteAssets/img/DWU-Invoice-Gallons.jpg" alt="Help me find my water usage"></p>
+
+        </div>
+
+        <!--Fancybox for showing help me find my meter size-->
+        <div id="metersize" style="display:none; bacgkground-color:grey;">
+            <h3>Meter Size</h3>
+            <p>Select your meter size which can be found on your utility invoice. Your Base Charge is determined by the meter size.</p>
+            <p align="center"><img src="../SiteAssets/img/DWU-Invoice.jpg" alt="Help me find my meter size"></p>
+        </div>
+
+        <!--Fancybox for showing information about the usage charge -->
+        <div id="usagecharge" style="display:none; bacgkground-color:grey;">
+            <h3>Usage Charge</h3>
+            <p>This volume charge is based on usage and covers variable cost such as chemicals, electric power, facility maintenance, repair of mains and repayment of bonds sold to finance construction of the water system.</p>
+        </div>
+
+
+        <!--Fancybox for showing information about the base charge -->
+        <div id="basecharge" style="display:none; bacgkground-color:grey;">
+            <h3>Base Charge</h3>
+            <p>Base water charges cover fixed cost such as reading and maintaining the meter, account maintenance, mailing bills and processing payments.</p>
+        </div>
+
+    </div>
+
+
+
+    <div id="calc_results">
+        <div id="estimated_total_waste_water">$0.00</div>
+        <div style="font-weight: bold;">MONTHLY CHARGES ESTIMATE / WASTE WATER - RESIDENTIAL</div>
+        <br>
+        <div id="">*Estimation Details Below</div>
+    </div>
+
+
+
+
+
+
+    </div>
+    </div>
+    <!-- ============================================================================================================================================================ -->
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 </body>
 </html>
@@ -165,191 +291,156 @@
 
 
 
+
+
+
+
+
+
+
+
 <script src="numeral.min.js"></script>
 <script>
 
-    var tier1, tier2, tier3, tier4, meter_rate;
+    var water_under_1=new Array(); //1) regular array. Pass an optional integer argument to control array's size.
+         var water_1_meter=new Array(); //1) regular array. Pass an optional integer argument to control array's size.
+         var waste_water=new Array(); //1) regular array. Pass an optional integer argument to control array's size.
+          
+          water_under_1[1]=14.68;      water_1_meter[1]=21.03;       waste_water[1]=32.60;
+          water_under_1[2]=14.68;      water_1_meter[2]=21.03;       waste_water[2]=32.60;
+          water_under_1[3]=22.03;      water_1_meter[3]=28.38;       waste_water[3]=35.85;
+          water_under_1[4]=29.37;      water_1_meter[4]=35.72;       waste_water[4]=39.10;
+          water_under_1[5]=36.71;      water_1_meter[5]=43.06;       waste_water[5]=42.35;
+          water_under_1[6]=44.05;      water_1_meter[6]=50.40;       waste_water[6]=45.60;
+          water_under_1[7]=52.34;      water_1_meter[7]=58.69;       waste_water[7]=50.45;
+          water_under_1[8]=60.64;      water_1_meter[8]=66.99;       waste_water[8]=55.30;
+          water_under_1[9]=68.93;      water_1_meter[9]=75.28;       waste_water[9]=60.15;
+         water_under_1[10]=77.22;     water_1_meter[10]=83.57;      waste_water[10]=65.00;
+         water_under_1[11]=85.51;     water_1_meter[11]=91.86;      waste_water[11]=69.85;
+         water_under_1[12]=93.80;     water_1_meter[12]=100.15;     waste_water[12]=74.70;
+         water_under_1[13]=102.10;    water_1_meter[13]=108.45;     waste_water[13]=79.55;
+         water_under_1[14]=110.39;    water_1_meter[14]=116.74;     waste_water[14]=84.40;
+         water_under_1[15]=118.68;    water_1_meter[15]=125.03;     waste_water[15]=89.25;
+         water_under_1[16]=127.62;    water_1_meter[16]=133.97;     waste_water[16]=96.50;
+         water_under_1[17]=136.56;    water_1_meter[17]=142.91;     waste_water[17]=103.75;
+         water_under_1[18]=145.51;    water_1_meter[18]=151.86;     waste_water[18]=111.00;
+         water_under_1[19]=154.45;    water_1_meter[19]=160.80;     waste_water[19]=118.25;
+         water_under_1[20]=163.39;    water_1_meter[20]=169.74;     waste_water[20]=125.50;
+         water_under_1[21]=172.33;    water_1_meter[21]=178.68;     waste_water[21]=132.75;
+         water_under_1[22]=181.27;    water_1_meter[22]=187.62;     waste_water[22]=140.00;
+         water_under_1[23]=190.22;    water_1_meter[23]=196.57;     waste_water[23]=147.25;
+         water_under_1[24]=199.16;    water_1_meter[24]=205.51;     waste_water[24]=154.50;
+         water_under_1[25]=208.10;    water_1_meter[25]=214.45;     waste_water[25]=161.75;
+         water_under_1[26]=217.04;    water_1_meter[26]=223.39;     waste_water[26]=161.75;
+         water_under_1[27]=225.98;    water_1_meter[27]=232.33;     waste_water[27]=161.75;
+         water_under_1[28]=234.93;    water_1_meter[28]=241.28;     waste_water[28]=161.75;
+         water_under_1[29]=243.87;    water_1_meter[29]=250.22;     waste_water[29]=161.75;
+         water_under_1[30]=252.81;    water_1_meter[30]=259.16;     waste_water[30]=161.75;
+         water_under_1[31]=261.75;    water_1_meter[31]=268.10;     waste_water[31]=161.75;
+         water_under_1[32]=270.69;    water_1_meter[32]=277.04;     waste_water[32]=161.75;
+         water_under_1[33]=279.64;    water_1_meter[33]=285.99;     waste_water[33]=161.75;
+         water_under_1[34]=288.58;    water_1_meter[34]=294.93;     waste_water[34]=161.75;
+         water_under_1[35]=297.52;    water_1_meter[35]=303.87;     waste_water[35]=161.75;
+         water_under_1[36]=306.46;    water_1_meter[36]=312.81;     waste_water[36]=161.75;
+         water_under_1[37]=315.40;    water_1_meter[37]=321.75;     waste_water[37]=161.75;
+         water_under_1[38]=324.35;    water_1_meter[38]=330.70;     waste_water[38]=161.75;
+         water_under_1[39]=333.29;    water_1_meter[39]=339.64;     waste_water[39]=161.75;
+         water_under_1[40]=342.23;    water_1_meter[40]=348.58;     waste_water[40]=161.75;
+         water_under_1[41]=351.17;    water_1_meter[41]=357.52;     waste_water[41]=161.75;
+         water_under_1[42]=360.11;    water_1_meter[42]=366.46;     waste_water[42]=161.75;
+         water_under_1[43]=369.06;    water_1_meter[43]=375.41;     waste_water[43]=161.75;
+         water_under_1[44]=378.00;    water_1_meter[44]=384.35;     waste_water[44]=161.75;
+         water_under_1[45]=386.94;    water_1_meter[45]=393.29;     waste_water[45]=161.75;
+         water_under_1[46]=395.88;    water_1_meter[46]=402.23;     waste_water[46]=161.75;
+         water_under_1[47]=404.82;    water_1_meter[47]=411.17;     waste_water[47]=161.75;
+         water_under_1[48]=413.77;    water_1_meter[48]=420.12;     waste_water[48]=161.75;
+         water_under_1[49]=422.71;    water_1_meter[49]=429.06;     waste_water[49]=161.75;
+         water_under_1[50]=431.65;    water_1_meter[50]=438.00;     waste_water[50]=161.75;
+         water_under_1[51]=440.59;    water_1_meter[51]=446.94;     waste_water[51]=161.75;
+         water_under_1[52]=449.53;    water_1_meter[52]=455.88;     waste_water[52]=161.75;
+         water_under_1[53]=458.48;    water_1_meter[53]=464.83;     waste_water[53]=161.75;
+         water_under_1[54]=467.42;    water_1_meter[54]=473.77;     waste_water[54]=161.75;
+         water_under_1[55]=476.36;    water_1_meter[55]=482.71;     waste_water[55]=161.75;
+         water_under_1[56]=485.30;    water_1_meter[56]=491.65;     waste_water[56]=161.75;
+         water_under_1[57]=494.24;    water_1_meter[57]=500.59;     waste_water[57]=161.75;
+         water_under_1[58]=503.19;    water_1_meter[58]=509.54;     waste_water[58]=161.75;
+         water_under_1[59]=512.13;    water_1_meter[59]=518.48;     waste_water[59]=161.75;
+         water_under_1[60]=521.07;    water_1_meter[60]=527.42;     waste_water[60]=161.75;
+         water_under_1[61]=530.01;    water_1_meter[61]=536.36;     waste_water[61]=161.75;
+         water_under_1[62]=538.95;    water_1_meter[62]=545.30;     waste_water[62]=161.75;
+         water_under_1[63]=547.90;    water_1_meter[63]=554.25;     waste_water[63]=161.75;
+         water_under_1[64]=556.84;    water_1_meter[64]=563.19;     waste_water[64]=161.75;
+         water_under_1[65]=565.78;    water_1_meter[65]=572.13;     waste_water[65]=161.75;
+         water_under_1[66]=574.72;    water_1_meter[66]=581.07;     waste_water[66]=161.75;
+         water_under_1[67]=583.66;    water_1_meter[67]=590.01;     waste_water[67]=161.75;
+         water_under_1[68]=592.61;    water_1_meter[68]=598.96;     waste_water[68]=161.75;
+         water_under_1[69]=601.55;    water_1_meter[69]=607.90;     waste_water[69]=161.75;
+         water_under_1[70]=610.49;    water_1_meter[70]=616.84;     waste_water[70]=161.75;
+         water_under_1[71]=619.43;    water_1_meter[71]=625.78;     waste_water[71]=161.75;
+         water_under_1[72]=628.37;    water_1_meter[72]=634.72;     waste_water[72]=161.75;
+         water_under_1[73]=637.32;    water_1_meter[73]=643.67;     waste_water[73]=161.75;
+         water_under_1[74]=646.26;    water_1_meter[74]=652.61;     waste_water[74]=161.75;
+         water_under_1[75]=655.20;    water_1_meter[75]=661.55;     waste_water[75]=161.75;
+         water_under_1[76]=664.14;    water_1_meter[76]=670.49;     waste_water[76]=161.75;
+         water_under_1[77]=673.08;    water_1_meter[77]=679.43;     waste_water[77]=161.75;
+         water_under_1[78]=682.03;    water_1_meter[78]=688.38;     waste_water[78]=161.75;
+         water_under_1[79]=690.97;    water_1_meter[79]=697.32;     waste_water[79]=161.75;
+         water_under_1[80]=699.91;    water_1_meter[80]=706.26;     waste_water[80]=161.75;
+         water_under_1[81]=708.85;    water_1_meter[81]=715.20;     waste_water[81]=161.75;
+         water_under_1[82]=717.79;    water_1_meter[82]=724.14;     waste_water[82]=161.75;
+         water_under_1[83]=726.74;    water_1_meter[83]=733.09;     waste_water[83]=161.75;
+         water_under_1[84]=735.68;    water_1_meter[84]=742.03;     waste_water[84]=161.75;
+         water_under_1[85]=744.62;    water_1_meter[85]=750.97;     waste_water[85]=161.75;
+         water_under_1[86]=753.56;    water_1_meter[86]=759.91;     waste_water[86]=161.75;
+         water_under_1[87]=762.50;    water_1_meter[87]=768.85;     waste_water[87]=161.75;
+         water_under_1[88]=771.45;    water_1_meter[88]=777.80;     waste_water[88]=161.75;
+         water_under_1[89]=780.39;    water_1_meter[89]=786.74;     waste_water[89]=161.75;
+         water_under_1[90]=789.33;    water_1_meter[90]=795.68;     waste_water[90]=161.75;
+         water_under_1[91]=798.27;    water_1_meter[91]=804.62;     waste_water[91]=161.75;
+         water_under_1[92]=807.21;    water_1_meter[92]=813.56;     waste_water[92]=161.75;
+         water_under_1[93]=816.16;    water_1_meter[93]=822.51;     waste_water[93]=161.75;
+         water_under_1[94]=825.10;    water_1_meter[94]=831.45;     waste_water[94]=161.75;
+         water_under_1[95]=834.04;    water_1_meter[95]=840.39;     waste_water[95]=161.75;
+         water_under_1[96]=842.98;    water_1_meter[96]=849.33;     waste_water[96]=161.75;
+         water_under_1[97]=851.92;    water_1_meter[97]=858.27;     waste_water[97]=161.75;
+         water_under_1[98]=860.87;    water_1_meter[98]=867.22;     waste_water[98]=161.75;
+         water_under_1[99]=869.81;    water_1_meter[99]=876.16;     waste_water[99]=161.75;
+        water_under_1[100]=878.75;   water_1_meter[100]=885.10;    waste_water[100]=161.75;
 
-    function calcTier1(Water_Usage1) {
-
-        if (Water_Usage1 < 4001) {
-            tier1 = Water_Usage1;
-        } else {
-            tier1 = 4000;
-        }
-
-        return tier1;
-    };
-
-    function calcTier2(Water_Usage2) {
-
-        if (Water_Usage2 < 4001) {
-            tier2 = 0;
-        } else if ((Water_Usage2 - 4000) < 6001) {
-            tier2 = Water_Usage2 - 4000
-        } else {
-            tier2 = 6000;
-        }
-
-        return tier2;
-    };
-
-
-    function calcTier3(Water_Usage3) {
-
-        if (Water_Usage3 < 10000) {
-            tier3 = 0;
-        } else if ((Water_Usage3 - 10000) > 5000) {
-            tier3 = 5000;
-        } else {
-            tier3 = (Water_Usage3 - (tier1 + tier2));
-        }
-
-        return tier3;
-    };
-
-
-    function calcTier4(Water_Usage4) {
-
-        if (Water_Usage4 < 15000) {
-            tier4 = 0;
-        } else {
-
-            tier4 = (Water_Usage4 - (tier1 + tier2 + tier3));
-        }
-
-        return tier4;
-    };
-
-
-    function calcMeterSizeRate(Meter_Size) {
-
-        if (Meter_Size == 1) {
-            meter_rate = 5.33;
-        } else if (Meter_Size == 2) {
-            meter_rate = 7.40;
-        } else if (Meter_Size == 3) {
-            meter_rate = 10.78;
-        } else if (Meter_Size == 4) {
-            meter_rate = 20.00;
-        } else if (Meter_Size == 5) {
-            meter_rate = 32.54;
-        } else if (Meter_Size == 6) {
-            meter_rate = 77.00;
-        } else if (Meter_Size == 7) {
-            meter_rate = 126.62;
-        } else {
-            meter_rate = 0.00;
-        }
-
-        return meter_rate;
-    };
 
 
 
-    //Change image when gallon slider moves
-    function changeSpotColor() {
-        var image = document.getElementById('myImage');
-        if (image.src.match("bulbon")) {
-            image.src = "../images/water-calculator-sprite.png";
-        } else {
-            image.src = "../images/water-calculator-sprite.png";
-        }
-    };
-
-
-
-    //Prevent user from typing letters into textbox
-    function isNumber(evt) {
-        evt = (evt) ? evt : window.event;
-        var charCode = (evt.which) ? evt.which : evt.keyCode;
-        if (charCode > 31 && (charCode < 48 || charCode > 57)) {
-            return false;
-        } else {
-
-            return true;
-        }
-
-    }
+function  myFunction_waste_water_gallon_input() {
+          var w = parseInt(document.getElementById("waste_water_gallon_input").value);
+          var div = document.getElementById("estimated_total_waste_water");
+           div.textContent = numeral(waste_water[w]).format('$0,0.00');
+}
 
 
     function myFunction() {
+         
 
-        //Grab the number of gallons.
-        var w = parseInt(document.getElementById("gallon_calc_input").value);
+        var w = parseInt(document.getElementById("gallon_input").value);
+        var metersize_dropdown = document.getElementById("metersize_dropdown");
+        var x = metersize_dropdown.options[metersize_dropdown.selectedIndex].value;
+        // alert(x);
 
-        //Grab the meter size.
-        var metersize_calc_input = document.getElementById("metersize_calc_input");
-        var x = metersize_calc_input.options[metersize_calc_input.selectedIndex].value;
 
-        if (isNaN(w)) {
-            w = 0;
-            //document.getElementById("gallon_calc_input").value = 0;
+        if (x == "5/8 & 3/4") {
+            // alert(water_under_1[w]);
+             var div = document.getElementById("estimated_total");
+
+            div.textContent = numeral(water_under_1[w]).format('$0,0.00');
+
+        } else if (x == "1") {
+            // alert(water_1_meter[w]);
+         var div = document.getElementById("estimated_total");
+            div.textContent = numeral(water_1_meter[w]).format('$0,0.00');
+
+        } else {
+                // alert("please select metersize");
+
         }
-
-        w *= 100; //Calculate usage charge
-
-        var amount1 = calcTier1(w); //Pass water usage to determine tier1 amount
-        var amount2 = calcTier2(w); //Pass water usage to determine tier2 amount
-        var amount3 = calcTier3(w); //Pass water usage to determine tier3 amount
-        var amount4 = calcTier4(w); //Pass water usage to determine tier4 amount
-
-
-
-        //Pass tier usage amounts to text box
-        document.getElementById('tier1').innerHTML = numeral(amount1).format('0,0');
-        document.getElementById('tier2').innerHTML = numeral(amount2).format('0,0');
-        document.getElementById('tier3').innerHTML = numeral(amount3).format('0,0');
-        document.getElementById('tier4').innerHTML = numeral(amount4).format('0,0');
-
-
-        //Calculate Usage (In Gallons) Sum
-        var usage_sum = (amount1 + amount2 + amount3 + amount4);
-        document.getElementById('usage_sum').innerHTML = numeral(usage_sum).format('0,0');
-
-
-        //Calculate the Usage Charge for each tier
-        var usage_charge1 = ((amount1 * 1.90) / 1000);
-        var usage_charge2 = ((amount2 * 4.25) / 1000);
-        var usage_charge3 = ((amount3 * 6.03) / 1000);
-        var usage_charge4 = ((amount4 * 8.55) / 1000);
-
-
-        //Pass the Usage Charge for each tier to the textbox
-
-        document.getElementById('tier1_uc').innerHTML = numeral(usage_charge1.toFixed(2)).format('$0,0.00');
-        document.getElementById('tier2_uc').innerHTML = numeral(usage_charge2.toFixed(2)).format('$0,0.00');
-        document.getElementById('tier3_uc').innerHTML = numeral(usage_charge3.toFixed(2)).format('$0,0.00');
-        document.getElementById('tier4_uc').innerHTML = numeral(usage_charge4.toFixed(2)).format('$0,0.00');
-
-
-        //Calculate Usage Charge total sum
-        var total_usage_charges = (usage_charge1 + usage_charge2 + usage_charge3 + usage_charge4).toFixed(2);
-
-
-        //Determine the base charge based on the meter size that is selected
-        var total_base_charges = calcMeterSizeRate(metersize_calc_input.selectedIndex);
-
-
-        //Pass the total usage charge to the textbox
-        document.getElementById('usage_charge_sum').innerHTML = numeral(total_usage_charges).format('$0,0.00');
-        document.getElementById('total_usage_charge').innerHTML = numeral(total_usage_charges).format('$0,0.00');
-
-
-        //Pass the total base charge to the textbox
-        document.getElementById('total_base_charge').innerHTML = numeral(total_base_charges).format('$0,0.00');
-
-
-        //Calculate the total estimated water charges
-        var total = (parseFloat(total_usage_charges) + parseFloat(total_base_charges));
-
-
-        //Pass the total estimated water charges to the textbox
-        document.getElementById('total_water_charges').innerHTML = numeral(total).format('$0,0.00');
-
-
-        var div = document.getElementById("estimated_total");
-        div.textContent = numeral(total).format('$0,0.00');
 
     };
 
@@ -420,6 +511,12 @@
         padding-bottom: 10px;
     }
 
+    #estimated_total_waste_water{
+        font-size: 45px;
+        color:#60b609;
+        padding-bottom: 10px;
+    }
+
     #gallon_input{
 
     }
@@ -427,174 +524,6 @@
 
 
 </style>
-<h1>Corpus Christi Water Calculcator TEST</h1>
-<div id="calulator_container">
-
-    <div id="calc_inputs">
-
-
-
-        <div class="calc_input_section">
-
-            <!--Left Side-->
-            <div class="event-date">
-
-                <div class="icons">
-                    <span class="water-sprite water-calculator-icons faucet" deluminate_imagetype="png"></span>
-                </div>
-
-
-            </div>
-            <!--Right Side-->
-            <div class="event-desc">
-                <a class="iwanttomodal" href="#gallons">
-                    <label>Gallons <span style="font-size:11px">(in hundreds)</span></label>
-                    <span class="water-sprite water-calculator-icon-info info" deluminate_imagetype="png"></span>
-                </a>
-                <input type="number" placeholder="0" max="9999999" min="0" class="calc_input" id="gallon_calc_input" onkeyup="myFunction()" onkeypress="return isNumber(event)" style="display: inline-block;">
-            </div>
-
-        </div>
-
-        <div class="calc_input_section">
-            <!--Left Side-->
-            <div class="event-date">
-                <div class="icons">
-                    <span class="water-sprite water-calculator-icons meter" deluminate_imagetype="png"></span>
-                </div>
-            </div>
-            <!--Right Side-->
-
-            <div class="event-desc">
-                <a class="iwanttomodal" href="#metersize">
-                    <label>Meter Size</label>
-                    <span class="water-sprite water-calculator-icon-info info" deluminate_imagetype="png"></span>
-                </a>
-                <select id="metersize_calc_input" class="calc_input" onchange="myFunction();">
-                    <option value="">Select Meter Size</option>
-                    <option>5/8</option>
-                    <option>3/4</option>
-                    <option>1</option>
-                    <option>1 1/2</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                </select>
-            </div>
-
-        </div>
-
-
-        <!--Fancybox for showing how to find the water usage-->
-        <div id="gallons" style="display:none; bacgkground-color:grey;">
-            <h3>Gallons</h3>
-            <p>Enter your water usage in 100 gallons which can be found on your utility invoice.</p>
-            <p align="center"><img src="../SiteAssets/img/DWU-Invoice-Gallons.jpg" alt="Help me find my water usage"></p>
-
-        </div>
-
-        <!--Fancybox for showing help me find my meter size-->
-        <div id="metersize" style="display:none; bacgkground-color:grey;">
-            <h3>Meter Size</h3>
-            <p>Select your meter size which can be found on your utility invoice. Your Base Charge is determined by the meter size.</p>
-            <p align="center"><img src="../SiteAssets/img/DWU-Invoice.jpg" alt="Help me find my meter size"></p>
-        </div>
-
-        <!--Fancybox for showing information about the usage charge -->
-        <div id="usagecharge" style="display:none; bacgkground-color:grey;">
-            <h3>Usage Charge</h3>
-            <p>This volume charge is based on usage and covers variable cost such as chemicals, electric power, facility maintenance, repair of mains and repayment of bonds sold to finance construction of the water system.</p>
-        </div>
-
-
-        <!--Fancybox for showing information about the base charge -->
-        <div id="basecharge" style="display:none; bacgkground-color:grey;">
-            <h3>Base Charge</h3>
-            <p>Base water charges cover fixed cost such as reading and maintaining the meter, account maintenance, mailing bills and processing payments.</p>
-        </div>
-
-    </div>
-
-
-
-    <div id="calc_results">
-        <div id="estimated_total">$0.00</div>
-        <div style="font-weight: bold;">MONTHLY CHARGES ESTIMATE</div>
-        <br>
-        <div id="">*Estimation Details Below</div>
-    </div>
-
-    <div class="slh-calculator" id="calc_details">
-
-        <h3>Estimation Details</h3>
-
-        <table>
-            <tbody>
-            <tr>
-                <th>&nbsp;</th>
-                <th>Usage (In Gallons)</th>
-                <th>Usage Charge</th>
-            </tr>
-            <tr>
-                <td style="text-align:left">Tier 1 (0-4000):</td>
-                <td><span id="tier1" name="tier1">4,000</span></td>
-                <td><span id="tier1_uc" name="tier1_uc">$0.00</span></td>
-            </tr>
-            <tr>
-                <td style="text-align:left">Tier 2 (4001-10000):</td>
-                <td><span id="tier2" name="tier2">6,000</span></td>
-                <td><span id="tier2_uc" name="tier2_uc">$0.00</span></td>
-            </tr>
-            <tr>
-                <td style="text-align:left">Tier 3 (10001-15000):</td>
-                <td><span id="tier3" name="tier3">3,000</span></td>
-                <td><span id="tier3_uc" name="tier3_uc">$0.00</span></td>
-            </tr>
-            <tr>
-                <td style="text-align:left">Tier 4 (&gt;15000):</td>
-                <td><span id="tier4" name="tier4">0</span></td>
-                <td><span id="tier4_uc" name="tier4_uc">$0.00</span></td>
-            </tr>
-            <tr>
-                <td>&nbsp;</td>
-                <td><span id="usage_sum" name="usage_sum">13,000</span></td>
-                <td><span id="usage_charge_sum" name="usage_charge_sum">$0.00</span></td>
-            </tr>
-            <tr>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-            </tr>
-            <!--Water Charges-->
-            <tr>
-                <td style="text-align:left"><a class="iwanttomodal" href="#usagecharge">Usage Charge<span class="water-sprite water-calculator-icon-info info" deluminate_imagetype="png"></span></a></td>
-                <td>&nbsp;</td>
-                <td><span id="total_usage_charge" name="total_usage_charge">$0.00</span></td>
-            </tr>
-            <tr>
-                <td style="text-align:left"><a class="iwanttomodal" href="#basecharge">Base Charge<span class="water-sprite water-calculator-icon-info info" deluminate_imagetype="png"></span></a></td>
-                <td>&nbsp;</td>
-                <td><span id="total_base_charge" name="total_base_charge">$0.00</span></td>
-            </tr>
-            <tr>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td style="text-align:left"><strong>Total Estimated Water Charges</strong></td>
-                <td>&nbsp;</td>
-                <td><span id="total_water_charges" name="total_water_charges">$0.00</span></td>
-            </tr>
-
-            </tbody><tbody>
-            </tbody></table>
-
-
-
-
-
-    </div>
 
 
     <script>
@@ -629,13 +558,4 @@
     </style>
 </div>
 
-<?php
-/**
- * Created by PhpStorm.
- * User: DavisonD
- * Date: 4/11/2018
- * Time: 2:24 PM
- */
 
-
-echo phpinfo();
