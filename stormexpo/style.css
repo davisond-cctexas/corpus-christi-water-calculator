@@ -1,13 +1,13 @@
 @import "grid.css";
-@import "../fonts/font-awesome.css";
-@import url(//fonts.googleapis.com/css?family=Roboto:400,100,300,400,400italic,500,700,900);
+/*@import "../fonts/font-awesome.css";*/
+/*@import url(//fonts.googleapis.com/css?family=Roboto:400,100,300,400,400italic,500,700,900);*/
 
 html,
 body {
-  background: #e4e4e4;
+  background: #1b75bc;
   font: 12px/22px Arial, sans-serif;
   font-family: 'Roboto', sans-serif;
-  color: #777777;
+  color: #fff;
   min-width: 300px;
 }
 * {
@@ -240,14 +240,15 @@ header {
   background-size: 100% auto;
 }
 .h-top {
-  background: url(opac-1.png) 0 0 repeat;
+  /*background: url(opac-1.png) 0 0 repeat;*/
   padding-bottom: 24px;
+background-color: #be1e2d;
   .transition: all .4s ease;
 }
 .h-bot {
   text-align: center;
   padding-top: 107px;
-  padding-bottom: 215px;
+  padding-bottom: 150px;
 }
 h1 { transition: all .4s ease;}
 h1,
@@ -315,7 +316,8 @@ h1 span,
   vertical-align: middle;
   text-align: center;
   text-shadow: 1px 1px #92422c;
-  background: #bb5539;
+  /*background: #be1e2d;*/
+  background: #1b75bc;
 }
 .box-1 .inside .btn:hover {
   box-shadow: 4px 4px 4px 1px #92422c;
@@ -333,7 +335,8 @@ h1 span,
   right: 0px;
   bottom: 0px;
   top: 500px;
-  background: #bb5539;
+  /*background: #1b75bc;*/
+  background: #be1e2d;
   transition: top .9s ease;
 }
 .box-1:hover .inside {
@@ -395,7 +398,7 @@ footer {
   padding-bottom: 30px;
 }
 .f-logo {
-  color: #262529;
+  color: #fff;
   margin-top: 52px;
   margin-bottom: 3px;
   float: none;
