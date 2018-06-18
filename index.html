@@ -21,12 +21,12 @@
 <div class="container">
 
 
-  <div class="alert alert-danger alert-dismissible fade show" role="alert">
+<!--   <div class="alert alert-danger alert-dismissible fade show" role="alert">
   <strong>ERROR TEST</strong> Please enter a number between 1 and 100.
   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
     <span aria-hidden="true">&times;</span>
   </button>
-</div>
+</div> -->
 
     <!--- Example CSS -->
     <style>
@@ -44,18 +44,7 @@
     </style>
 
     <!--- Example Javascript -->
-    <script>
-        $(document)
-            .ready(function() {
-              $('.alert').alert()
-                $('.ui.dropdown')
-                    .dropdown({
-                        on: 'click'
-                    })
-                ;
-            })
-        ;
-    </script>
+
     </head>
 
     <body>
@@ -73,7 +62,7 @@
     <br>
     <b>Instructions:</b> Provide the information requested below. Your water usage can be found on your utility invoice. Some accounts have more than one meter. For those accounts with multiple meters, you will need to run the calculator for each meter.  There are no wastewater charges for an irrigation meter.
     <br>
-    <p><b>Example:</b> If you want to estimate the cost of 8,000 gallons of water, enter 8 in the designated space; if you want to estimate 10,000 gallons, enter 10. The most common residential meter size is 5/8. Your residential meter size is going to be 5/8” or 1”.  If you don’t know what meter size you have at home, call (361) 826-CITY(2489) to find out. </p> <br><br>
+    <p><b>Example:</b> If you want to estimate the cost of 8,000 gallons of water, enter 8 in the designated space; if you want to estimate 10,000 gallons, enter 10. The most common residential meter size is 5/8". Your residential meter size is going to be 5/8” or 1”.  If you don’t know what meter size you have at home, call (361) 826-CITY(2489) to find out. </p> <br><br>
 
 
     <div class="ui one column stackable grid">
@@ -99,10 +88,11 @@
                         <!--Right Side-->
                         <div class="event-desc">
                             <a class="iwanttomodal" href="#gallons">
-                                <label>Gallons <span style="font-size:11px">(in thousands, 1 - 100)</span></label>
+                                <label>Gallons <span style="font-size:17px">(in thousands, 1 - 100)</span></label>
                                 <span class="water-sprite water-calculator-icon-info info" deluminate_imagetype="png"></span>
                             </a>
-                            <input  type="number" placeholder="0" max="9999999" min="0" class="calc_input form-control" name="gallon_input" id="gallon_input" onkeyup="myFunction()" onkeypress="return isNumber(event)" style="display: inline-block;">
+                            <input  type="number" placeholder="0" max="9999999" min="0" class="calc_input form-control" name="gallon_input" id="gallon_input" onkeyup="myFunction()"  style="display: inline-block;">
+                          <div id="error-message" style="font-size: 13px; margin-top:  5px; color: red; display: none;">Please provide a number between 1 and 100.</div>
                         </div>
 
                     </div>
@@ -265,6 +255,8 @@
 
 
 
+
+
     <script src="numeral.min.js"></script>
     <script>
 
@@ -393,14 +385,16 @@
 
             // alert(x);
 
-            if (x > 100 || x < 1) {
-                  $('.alert').alert();
+            if (w > 100 || w < 1) {
+                  window.alert("Please provide a number between 1 and 100.");
             }
-
+     
 
 
             if (x == "5/8 & 3/4") {
                 // alert(water_under_1[w]);
+                  
+
                 var div = document.getElementById("estimated_total");
 
                 div.textContent = numeral(water_under_1[w]).format('$0,0.00');
