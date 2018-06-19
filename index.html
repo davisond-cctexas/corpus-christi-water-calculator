@@ -1,308 +1,329 @@
+
 <!doctype html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="../../../../favicon.ico">
 
-    <title>Residential Water and Wastewater Charges Calculator </title>
+    <title>Album example for Bootstrap</title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="css/form-validation.css" rel="stylesheet">
-</head>
+    <link href="album.css" rel="stylesheet">
+  
+    <style>
 
-<body class="bg-light">
 
-<section class="jumbotron text-center" style="
-    /* width: 100% !important; */
-    margin-top: 100px; height: 330px; 
-">
+
+        #calulator_container{
+            width:700px;
+        }
+
+        #calc_inputs{
+            float:left;
+            width: 37%;
+            margin-right: 2%;
+            margin-bottom:20px;
+        }
+
+        #calc_inputs label{
+            margin-bottom:10px;
+            font-size:20px;
+        }
+
+        .calc_input_section{
+            margin-bottom:20px;
+            float: left;
+        }
+
+        .calc_input{
+            /*width:100%;
+            font-size:16px;
+            border:none;
+            border-bottom: solid 1px rgb(0,64,128);
+            padding: 10px 0;
+            border-radius:0px;*/
+        }
+
+        #calc_results{
+            float:right;
+            width:53%;
+            background-color: white;
+            color: rgb(0,64,128);
+            text-align: center;
+            border-radius: 6px;
+            padding: 30px 0px;
+        }
+
+        #calc_details{
+            clear:both;
+            margin-top:20px;
+            display:block;
+        }
+
+        /*
+          #calc_details table{
+           width: 100%;
+          }
+          */
+
+        #estimated_total{
+            font-size: 45px;
+            color:#60b609;
+            padding-bottom: 10px;
+        }
+
+        #estimated_total_waste_water{
+            font-size: 45px;
+            color:#60b609;
+            padding-bottom: 10px;
+        }
+
+        #gallon_input{
+
+        }
+
+
+
+    </style>
+
+  </head>
+
+  <body>
+
+    <header>
+      <div class="collapse bg-dark" id="navbarHeader">
         <div class="container">
-          <h1 class="jumbotron-heading">Residential Water and Wastewater Charges Calculator Banner Test</h1>
+          <div class="row">
+            <div class="col-sm-8 col-md-7 py-4">
+              <h4 class="text-white">About</h4>
+              <p class="text-muted">Add some information about the album below, the author, or any other background context. Make it a few sentences long so folks can pick up some informative tidbits. Then, link them off to some social networking sites or contact information.</p>
+            </div>
+            <div class="col-sm-4 offset-md-1 py-4">
+              <h4 class="text-white">Contact</h4>
+              <ul class="list-unstyled">
+                <li><a href="#" class="text-white">Follow on Twitter</a></li>
+                <li><a href="#" class="text-white">Like on Facebook</a></li>
+                <li><a href="#" class="text-white">Email me</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="navbar navbar-dark bg-dark box-shadow" style="background-color: #84b5de !important; padding: 0 !important;">
+        <div class="container d-flex justify-content-between">
+          <img src="cc_new_header1.jpg">
+       <!--    <a href="#" class="navbar-brand d-flex align-items-center">
+ 
+                  <img src="footer-logo.png" style="width: 70px !important;">
+            <strong>City of Corpus Christi</strong>
+          </a> -->
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main role="main">
+
+      <section class="jumbotron text-center">
+        <div class="container">
+     <!--      <img src="long-water.jpg">
+          <img src="guage.jpg">
+          <img src="long-watermeter.jpg">
+          <img src="long-water.jpg"> -->
+
+ 
+              <!-- <img src="test-banner.png"  class="img-responsive" > -->
+             
+          
+        </div>
+
+         <img src="test-banner.png"  class="img-responsive" >
+          <h1 class="jumbotron-heading">testing image z-index value</h1>
           <p class="lead text-muted">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
           <p>
-            <a href="#" class="btn btn-primary my-2">Button Test</a>
-            <a href="#" class="btn btn-secondary my-2">Button Test</a>
+            <a href="#" class="btn btn-primary my-2">Water Rates and Charges</a>
+            <a href="#" class="btn btn-secondary my-2">Secondary action</a>
           </p>
         </div>
       </section>
-<div class="container">
+
+      <div class="album py-5 bg-light">
+        <div class="container">
+
+          <div class="row">
+            
+            
+            
 
 
-<!--   <div class="alert alert-danger alert-dismissible fade show" role="alert">
-  <strong>ERROR TEST</strong> Please enter a number between 1 and 100.
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-    <span aria-hidden="true">&times;</span>
-  </button>
-</div> -->
-
-    <!--- Example CSS -->
-    <style>
-        body {
-            /*padding: 1em;*/
-            font-size: 0.91em;
-        }
-
-        div {
-            /*border: 1px solid #000;*/
-        }
-        .ui.input + .ui.input {
-            margin-left: 1em;
-        }
-    </style>
-
-    <!--- Example Javascript -->
-
-    </head>
-
-    <body>
-            <header>
-      <!-- Fixed navbar -->
-      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark"  style="height: 100px; background-color: #62ADEC !important;">
-        <a class="navbar-brand" href="#">header/logo test</a>
-        <img src="footer-logo.png">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <!-- <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a> -->
-            </li>
-            <li class="nav-item">
-              <!-- <a class="nav-link" href="#">Link</a> -->
-            </li>
-            <li class="nav-item">
-              <!-- <a class="nav-link disabled" href="#">Disabled</a> -->
-            </li>
-          </ul>
-          <!-- <form class="form-inline mt-2 mt-md-0">
-            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-          </form> -->
-        </div>
-      </nav>
-    </header>
-
-    <div class="" style="margin-top:  0px;">
-
-    <h3>Residential Water and Wastewater Charges Calculator</h3>
-
-    Estimate water and wastewater monthly charges based on the amount of gallons you  expect to consume for the month and the meter size.
-    <br>
-    <br>
+            <!-- ====================================================================================================================================================== -->
 
 
 
-    <b>Disclaimer:</b> This online calculator is for estimating the residential water and wastewater charges only, based on a 30‐day billing cycle. Solid Waste, Gas and Streets charges are not included. Your actual residential water and wastewater charges may vary depending on any rate changes and the length of the billing cycle. For rate information visit <a href="http://www.cctexas.com/services/utilities/water-rates-and-charges" target="_blank">http://www.cctexas.com/services/utilities/water-rates-and-charges</a>. For questions or comments, please email us at _________________@cctexas.com. or call (361) 826-CITY(2489).
-    <br>
-    <br>
-    <b>Instructions:</b> Provide the information requested below. Your water usage can be found on your utility invoice. Some accounts have more than one meter. For those accounts with multiple meters, you will need to run the calculator for each meter.  There are no wastewater charges for an irrigation meter.
-    <br>
-    <p><b>Example:</b> If you want to estimate the cost of 8,000 gallons of water, enter 8 in the designated space; if you want to estimate 10,000 gallons, enter 10. The most common residential meter size is 5/8". Your residential meter size is going to be 5/8” or 1”.  If you don’t know what meter size you have at home, call (361) 826-CITY(2489) to find out. </p> <br><br>
-
-
-    <div class="ui one column stackable grid">
-        <div class="column">
-
-            <div id="calulator_container">
-
-                <div id="calc_inputs">
-
-
-
-                    <div class="calc_input_section">
-
-                        <!--Left Side-->
-                        <div class="event-date">
-
-                            <div class="icons">
-                                <span class="water-sprite water-calculator-icons faucet" deluminate_imagetype="png"></span>
-                            </div>
-
-
-                        </div>
-                        <!--Right Side-->
-                        <div class="event-desc">
-                            <a class="iwanttomodal" href="#gallons">
-                                <label>Gallons <span style="font-size:17px">(in thousands, 1 - 100)</span></label>
-                                <span class="water-sprite water-calculator-icon-info info" deluminate_imagetype="png"></span>
-                            </a>
-                            <input  type="number" placeholder="0" max="9999999" min="0" class="calc_input form-control" name="gallon_input" id="gallon_input" onkeyup="myFunction()"  style="display: inline-block;">
-                          <div id="error-message" style="font-size: 13px; margin-top:  5px; color: red; display: none;">Please provide a number between 1 and 100.</div>
-                        </div>
-
-                    </div>
-
-                    <div class="calc_input_section">
-                        <!--Left Side-->
-                        <div class="event-date">
-                            <div class="icons">
-                                <span class="water-sprite water-calculator-icons meter" deluminate_imagetype="png"></span>
-                            </div>
-                        </div>
-                        <!--Right Side-->
-
-                        <div class="event-desc">
-                            <a class="iwanttomodal" href="#metersize">
-                                <label>Meter Size</label>
-                                <span class="water-sprite water-calculator-icon-info info" deluminate_imagetype="png"></span>
-                            </a>
-                            <select id="metersize_dropdown" style="width: 260px;" class="calc_input form-control" onchange="myFunction();">
-                                <option value="Select Meter Size">Select Meter Size</option>
-                                <option value="5/8 & 3/4">5/8 & 3/4</option>
-                                <option value="1">1</option>
-
-                            </select>
-                        </div>
-
-                    </div>
-
-
-
-
-
-
-
-                    <!--Fancybox for showing how to find the water usage-->
-                    <div id="gallons" style="display:none; bacgkground-color:grey;">
-                        <h3>Gallons</h3>
-                        <p>Enter your water usage in 100 gallons which can be found on your utility invoice.</p>
-                        <p align="center"><img src="../SiteAssets/img/DWU-Invoice-Gallons.jpg" alt="Help me find my water usage"></p>
-
-                    </div>
-
-                    <!--Fancybox for showing help me find my meter size-->
-                    <div id="metersize" style="display:none; bacgkground-color:grey;">
-                        <h3>Meter Size</h3>
-                        <p>Select your meter size which can be found on your utility invoice. Your Base Charge is determined by the meter size.</p>
-                        <p align="center"><img src="../SiteAssets/img/DWU-Invoice.jpg" alt="Help me find my meter size"></p>
-                    </div>
-
-                    <!--Fancybox for showing information about the usage charge -->
-                    <div id="usagecharge" style="display:none; bacgkground-color:grey;">
-                        <h3>Usage Charge</h3>
-                        <p>This volume charge is based on usage and covers variable cost such as chemicals, electric power, facility maintenance, repair of mains and repayment of bonds sold to finance construction of the water system.</p>
-                    </div>
-
-
-                    <!--Fancybox for showing information about the base charge -->
-                    <div id="basecharge" style="display:none; bacgkground-color:grey;">
-                        <h3>Base Charge</h3>
-                        <p>Base water charges cover fixed cost such as reading and maintaining the meter, account maintenance, mailing bills and processing payments.</p>
-                    </div>
-
-                </div>
-
-
-
-                <div id="calc_results">
-                    <div style="font-weight: bold;">Water</div>
-                    <div id="estimated_total">$0.00</div>
-                    <div style="font-weight: bold;">MONTHLY CHARGES ESTIMATE</div>
-                    <div style="font-weight: bold;">RESIDENTIAL / INSIDE CITY LIMITS</div>
-                    <br>
-                    <div id="">Monthly Charges Estimate Includes raw water charge </div>
-                </div>
-
-
-
-
-
-
+<div class="" style="margin-top:  0px;">
+   <h3>Residential Water and Wastewater Charges Calculator</h3>
+   Estimate water and wastewater monthly charges based on the amount of gallons you  expect to consume for the month and the meter size.
+   <br>
+   <br>
+   <b>Disclaimer:</b> This online calculator is for estimating the residential water and wastewater charges only, based on a 30‐day billing cycle. Solid Waste, Gas and Streets charges are not included. Your actual residential water and wastewater charges may vary depending on any rate changes and the length of the billing cycle. For rate information visit <a href="http://www.cctexas.com/services/utilities/water-rates-and-charges" target="_blank">http://www.cctexas.com/services/utilities/water-rates-and-charges</a>. For questions or comments, please email us at _________________@cctexas.com. or call (361) 826-CITY(2489).
+   <br>
+   <br>
+   <b>Instructions:</b> Provide the information requested below. Your water usage can be found on your utility invoice. Some accounts have more than one meter. For those accounts with multiple meters, you will need to run the calculator for each meter.  There are no wastewater charges for an irrigation meter.
+   <br>
+   <p><b>Example:</b> If you want to estimate the cost of 8,000 gallons of water, enter 8 in the designated space; if you want to estimate 10,000 gallons, enter 10. The most common residential meter size is 5/8". Your residential meter size is going to be 5/8” or 1”.  If you don’t know what meter size you have at home, call (361) 826-CITY(2489) to find out. </p>
+   <br><br>
+   <div class="ui one column stackable grid">
+      <div class="column">
+         <div id="calulator_container">
+            <div id="calc_inputs">
+               <div class="calc_input_section">
+                  <!--Left Side-->
+                  <div class="event-date">
+                     <div class="icons">
+                        <span class="water-sprite water-calculator-icons faucet" deluminate_imagetype="png"></span>
+                     </div>
+                  </div>
+                  <!--Right Side-->
+                  <div class="event-desc">
+                     <a class="iwanttomodal" href="#gallons">
+                     <label>Gallons <span style="font-size:17px">(in thousands, 1 - 100)</span></label>
+                     <span class="water-sprite water-calculator-icon-info info" deluminate_imagetype="png"></span>
+                     </a>
+                     <input  type="number" placeholder="0" max="9999999" min="0" class="calc_input form-control" name="gallon_input" id="gallon_input" onkeyup="myFunction()"  style="display: inline-block;">
+                     <div id="error-message" style="font-size: 13px; margin-top:  5px; color: red; display: none;">Please provide a number between 1 and 100.</div>
+                  </div>
+               </div>
+               <div class="calc_input_section">
+                  <!--Left Side-->
+                  <div class="event-date">
+                     <div class="icons">
+                        <span class="water-sprite water-calculator-icons meter" deluminate_imagetype="png"></span>
+                     </div>
+                  </div>
+                  <!--Right Side-->
+                  <div class="event-desc">
+                     <a class="iwanttomodal" href="#metersize">
+                     <label>Meter Size</label>
+                     <span class="water-sprite water-calculator-icon-info info" deluminate_imagetype="png"></span>
+                     </a>
+                     <select id="metersize_dropdown" style="width: 260px;" class="calc_input form-control" onchange="myFunction();">
+                        <option value="Select Meter Size">Select Meter Size</option>
+                        <option value="5/8 & 3/4">5/8 & 3/4</option>
+                        <option value="1">1</option>
+                     </select>
+                  </div>
+               </div>
+               <!--Fancybox for showing how to find the water usage-->
+               <div id="gallons" style="display:none; bacgkground-color:grey;">
+                  <h3>Gallons</h3>
+                  <p>Enter your water usage in 100 gallons which can be found on your utility invoice.</p>
+                  <p align="center"><img src="../SiteAssets/img/DWU-Invoice-Gallons.jpg" alt="Help me find my water usage"></p>
+               </div>
+               <!--Fancybox for showing help me find my meter size-->
+               <div id="metersize" style="display:none; bacgkground-color:grey;">
+                  <h3>Meter Size</h3>
+                  <p>Select your meter size which can be found on your utility invoice. Your Base Charge is determined by the meter size.</p>
+                  <p align="center"><img src="../SiteAssets/img/DWU-Invoice.jpg" alt="Help me find my meter size"></p>
+               </div>
+               <!--Fancybox for showing information about the usage charge -->
+               <div id="usagecharge" style="display:none; bacgkground-color:grey;">
+                  <h3>Usage Charge</h3>
+                  <p>This volume charge is based on usage and covers variable cost such as chemicals, electric power, facility maintenance, repair of mains and repayment of bonds sold to finance construction of the water system.</p>
+               </div>
+               <!--Fancybox for showing information about the base charge -->
+               <div id="basecharge" style="display:none; bacgkground-color:grey;">
+                  <h3>Base Charge</h3>
+                  <p>Base water charges cover fixed cost such as reading and maintaining the meter, account maintenance, mailing bills and processing payments.</p>
+               </div>
             </div>
-
-
-
-
-
-        </div>
-
-        <!-- ============================================================================================================================================================ -->
-        <div class="column">
-            <!-- <b>Wastewater</b> -->
-
-            <div id="calulator_container">
-
-                <div id="calc_inputs">
-
-
-
-     
-
-
-
-
-
-
-
-                    <!--Fancybox for showing how to find the water usage-->
-                    <div id="gallons" style="display:none; bacgkground-color:grey;">
-                        <h3>Gallons</h3>
-                        <p>Enter your water usage in 100 gallons which can be found on your utility invoice.</p>
-                        <p align="center"><img src="../SiteAssets/img/DWU-Invoice-Gallons.jpg" alt="Help me find my water usage"></p>
-
-                    </div>
-
-                    <!--Fancybox for showing help me find my meter size-->
-                    <div id="metersize" style="display:none; bacgkground-color:grey;">
-                        <h3>Meter Size</h3>
-                        <p>Select your meter size which can be found on your utility invoice. Your Base Charge is determined by the meter size.</p>
-                        <p align="center"><img src="../SiteAssets/img/DWU-Invoice.jpg" alt="Help me find my meter size"></p>
-                    </div>
-
-                    <!--Fancybox for showing information about the usage charge -->
-                    <div id="usagecharge" style="display:none; bacgkground-color:grey;">
-                        <h3>Usage Charge</h3>
-                        <p>This volume charge is based on usage and covers variable cost such as chemicals, electric power, facility maintenance, repair of mains and repayment of bonds sold to finance construction of the water system.</p>
-                    </div>
-
-
-                    <!--Fancybox for showing information about the base charge -->
-                    <div id="basecharge" style="display:none; bacgkground-color:grey;">
-                        <h3>Base Charge</h3>
-                        <p>Base water charges cover fixed cost such as reading and maintaining the meter, account maintenance, mailing bills and processing payments.</p>
-                    </div>
-
-                </div>
-
-
-
-                <div id="calc_results" style="margin-top: 10px;">
-                    <div style="font-weight: bold;">Wastewater</div>
-                    <div id="estimated_total_waste_water">$0.00</div>
-                    <div style="font-weight: bold;">MONTHLY CHARGES ESTIMATE </div>
-                    <div style="font-weight: bold;">RESIDENTIAL / INSIDE CITY LIMITS</div>
-                    <br>
-                    <!-- <div id="">*Estimation Details Below</div> -->
-                </div>
-
-
-
-
-
-
+            <div id="calc_results">
+               <div style="font-weight: bold;">Water</div>
+               <div id="estimated_total">$0.00</div>
+               <div style="font-weight: bold;">MONTHLY CHARGES ESTIMATE</div>
+               <div style="font-weight: bold;">RESIDENTIAL / INSIDE CITY LIMITS</div>
+               <br>
+               <div id="">Monthly Charges Estimate Includes raw water charge </div>
             </div>
-        </div>
-        <!-- ============================================================================================================================================================ -->
-
-
-
-    </div>
-
-
-
+         </div>
+      </div>
+      <div class="column">
+         <!-- <b>Wastewater</b> -->
+         <div id="calulator_container">
+            <div id="calc_inputs">
+               <!--Fancybox for showing how to find the water usage-->
+               <div id="gallons" style="display:none; bacgkground-color:grey;">
+                  <h3>Gallons</h3>
+                  <p>Enter your water usage in 100 gallons which can be found on your utility invoice.</p>
+                  <p align="center"><img src="../SiteAssets/img/DWU-Invoice-Gallons.jpg" alt="Help me find my water usage"></p>
+               </div>
+               <!--Fancybox for showing help me find my meter size-->
+               <div id="metersize" style="display:none; bacgkground-color:grey;">
+                  <h3>Meter Size</h3>
+                  <p>Select your meter size which can be found on your utility invoice. Your Base Charge is determined by the meter size.</p>
+                  <p align="center"><img src="../SiteAssets/img/DWU-Invoice.jpg" alt="Help me find my meter size"></p>
+               </div>
+               <!--Fancybox for showing information about the usage charge -->
+               <div id="usagecharge" style="display:none; bacgkground-color:grey;">
+                  <h3>Usage Charge</h3>
+                  <p>This volume charge is based on usage and covers variable cost such as chemicals, electric power, facility maintenance, repair of mains and repayment of bonds sold to finance construction of the water system.</p>
+               </div>
+               <!--Fancybox for showing information about the base charge -->
+               <div id="basecharge" style="display:none; bacgkground-color:grey;">
+                  <h3>Base Charge</h3>
+                  <p>Base water charges cover fixed cost such as reading and maintaining the meter, account maintenance, mailing bills and processing payments.</p>
+               </div>
+            </div>
+            <div id="calc_results" style="margin-top: 10px;">
+               <div style="font-weight: bold;">Wastewater</div>
+               <div id="estimated_total_waste_water">$0.00</div>
+               <div style="font-weight: bold;">MONTHLY CHARGES ESTIMATE </div>
+               <div style="font-weight: bold;">RESIDENTIAL / INSIDE CITY LIMITS</div>
+               <br>
+               <!-- <div id="">*Estimation Details Below</div> -->
+            </div>
+         </div>
+      </div>
+   </div>
 </div>
 
+<!-- ====================================================================================================================================================== -->
+
+       
 
 
+          </div>
+        </div>
+      </div>
 
+    </main>
 
+    <footer class="text-muted" style="border: 1px solid #000;">
+      <div class="container">
+        <p class="float-right">
+          <a href="#">Back to top</a>
+          <h1>footer</h1>
+        </p>
+        <!-- <p>Album example is &copy; Bootstrap, but please download and customize it for yourself!</p> -->
+        <!-- <p>New to Bootstrap? <a href="../../">Visit the homepage</a> or read our <a href="../../getting-started/">getting started guide</a>.</p> -->
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="../../assets/js/vendor/popper.min.js"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <script src="../../assets/js/vendor/holder.min.js"></script>
     <script src="numeral.min.js"></script>
     <script>
 
@@ -466,131 +487,7 @@
 
 
     </script>
-<!-- https://springbox.frontify.com/d/0ygibvZ3xIJT/city-of-corpus-christi#/web-guidelines/colors -->
-    <style>
-
-
-
-        #calulator_container{
-            width:700px;
-        }
-
-        #calc_inputs{
-            float:left;
-            width: 37%;
-            margin-right: 2%;
-            margin-bottom:20px;
-        }
-
-        #calc_inputs label{
-            margin-bottom:10px;
-            font-size:20px;
-        }
-
-        .calc_input_section{
-            margin-bottom:20px;
-            float: left;
-        }
-
-        .calc_input{
-            /*width:100%;
-            font-size:16px;
-            border:none;
-            border-bottom: solid 1px rgb(0,64,128);
-            padding: 10px 0;
-            border-radius:0px;*/
-        }
-
-        #calc_results{
-            float:right;
-            width:53%;
-            background-color: white;
-            color: rgb(0,64,128);
-            text-align: center;
-            border-radius: 6px;
-            padding: 30px 0px;
-        }
-
-        #calc_details{
-            clear:both;
-            margin-top:20px;
-            display:block;
-        }
-
-        /*
-          #calc_details table{
-           width: 100%;
-          }
-          */
-
-        #estimated_total{
-            font-size: 45px;
-            color:#60b609;
-            padding-bottom: 10px;
-        }
-
-        #estimated_total_waste_water{
-            font-size: 45px;
-            color:#60b609;
-            padding-bottom: 10px;
-        }
-
-        #gallon_input{
-
-        }
-
-
-
-    </style>
-
-
-
-
-</div>
-
-
-
-
-<footer style="margin-top: 800px; border: 1px solid" class="my-5 pt-5 text-muted text-center text-small">
-  <p class="mb-1">&copy; 2017-2018 Company Name</p>
-  <ul class="list-inline">
-    <li class="list-inline-item"><a href="#">Privacy</a></li>
-    <li class="list-inline-item"><a href="#">Terms</a></li>
-    <li class="list-inline-item"><a href="#">Support</a></li>
-  </ul>
-</footer>
-</div>
-
-<!-- Bootstrap core JavaScript
-================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
-<!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-<script src="../../assets/js/vendor/popper.min.js"></script>
-<script src="../../dist/js/bootstrap.min.js"></script>
-<script src="../../assets/js/vendor/holder.min.js"></script> -->
-<!-- <script>
-  // Example starter JavaScript for disabling form submissions if there are invalid fields
-  (function() {
-    'use strict';
-
-    window.addEventListener('load', function() {
-      // Fetch all the forms we want to apply custom Bootstrap validation styles to
-      var forms = document.getElementsByClassName('needs-validation');
-
-      // Loop over them and prevent submission
-      var validation = Array.prototype.filter.call(forms, function(form) {
-        form.addEventListener('submit', function(event) {
-          if (form.checkValidity() === false) {
-            event.preventDefault();
-            event.stopPropagation();
-          }
-          form.classList.add('was-validated');
-        }, false);
-      });
-    }, false);
-  })();
-</script> -->
-
-</body>
+<script src="//use.typekit.net/jwj5fdd.js"></script>
+<script>try{Typekit.load();}catch(e){}</script>
+  </body>
 </html>
